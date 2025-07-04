@@ -20,7 +20,7 @@ main() #calling the main function
 students = ['Hermoine', 'Harry', 'Ron']
 
 def studentsList():
-    for i in students:
-        print(i)
+    for i in range(len(students)):
+        print(students[i])
     
 studentsList()
