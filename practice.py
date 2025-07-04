@@ -1,4 +1,6 @@
-#meow
+
+'''
+#practice function and for loop
 
 #define a function main
 def main():
@@ -10,3 +12,15 @@ def meow(n):
         print("meow") #prints meow based on n
 
 main() #calling the main function
+
+'''
+
+#practice list
+
+students = ['Hermoine', 'Harry', 'Ron']
+
+def studentsList():
+    for i in students:
+        print(i)
+    
+studentsList()
