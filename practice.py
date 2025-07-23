@@ -39,7 +39,7 @@ for name, house in students.items():
     print(name, house, sep=", ")
 
 '''
-
+'''
 #practice nested for loop with functions
 
 def main():
@@ -52,3 +52,35 @@ def square(size):
         print()
 
 main()
+
+'''
+'''
+#practice dictionary
+
+def main():
+    spacecraft = {"name": "Voyager", "distance": "30 AU"}
+    spacecraft.update({"orbit": "Sun"})
+    print(createReport(spacecraft))
+
+def createReport(spacecraft):
+    return f"""
+    Name:{spacecraft.get("name", "Unknown")}
+    Distance: {spacecraft.get("distance", "Unknown")}
+    Orbit: {spacecraft.get("orbit", "Unknown")}
+    """
+
+main()
+
+'''
+
+distances = {
+    "Voyager 1": "163 AU",
+    "Voyager 2": "136 AU"
+}
+
+def main():
+    for name in distances.values():
+        print(f"{name}")
+
+main()
+
