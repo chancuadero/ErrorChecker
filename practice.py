@@ -72,7 +72,7 @@ def createReport(spacecraft):
 main()
 
 '''
-
+'''
 distances = {
     "Voyager 1": "163 AU",
     "Voyager 2": "136 AU"
@@ -84,3 +84,22 @@ def main():
 
 main()
 
+'''
+
+def main():
+    count = {}
+    words = get_word('address.txt')
+
+    for word in words:
+        if word in count:
+            count[word] += 1
+        else:
+            count[word] = 1
+    print(count)
+
+def get_word(input_file):
+    with open(input_file,'r') as file:
+        content = file.read().lower().split()
+        return content
+    
+main()
