@@ -1,4 +1,5 @@
 import csv
+import string
 
 def main():
     counts = {}
@@ -17,8 +18,10 @@ def main():
 def get_words(file_path):
     with open(file_path, 'r') as file:
         content = file.read()
-        processed_content = content.lower().split()
-        return processed_content
+        translator = str.maketrans('', '', string.punctuation)
+        processed_content = content.translate(translator)
+        word_list = processed_content.split()
+        return word_list
     
 def save_counts(counts, output_file_path):
     with open(output_file_path, 'w', newline="") as csv_file:
