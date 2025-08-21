@@ -20,7 +20,7 @@ def get_words(file_path):
         content = file.read()
         translator = str.maketrans('', '', string.punctuation)
         processed_content = content.translate(translator)
-        word_list = processed_content.split()
+        word_list = processed_content.lower().split()
         return word_list
     
 def save_counts(counts, output_file_path):

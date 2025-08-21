@@ -85,21 +85,33 @@ def main():
 main()
 
 '''
+import csv
 
 def main():
-    count = {}
+    counts = {}
     words = get_word('address.txt')
 
     for word in words:
-        if word in count:
-            count[word] += 1
+        if word in counts:
+            counts[word] += 1
         else:
-            count[word] = 1
-    print(count)
+            counts[word] = 1
+    save_counts(counts, 'counts.csv')
 
 def get_word(input_file):
     with open(input_file,'r') as file:
-        content = file.read().lower().split()
-        return content
+        content = file.read()
+        translate = content.lower()
+        processed_content = translate.split()
+        return processed_content
+
+def save_counts(counts, output_file):
+    with open(output_file, 'w', newline="") as csv_file:
+        writer = csv.writer(csv_file)
+        writer.writerow(['Word', 'Count'])
+
+        for word, count in counts.items():
+            writer.writerow([word, count])
+
     
 main()
